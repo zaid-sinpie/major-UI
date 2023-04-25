@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Login Page</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="style.css" />
+    <script
+      src="https://kit.fontawesome.com/bb6d64a46b.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Login</h1>
+      <div class="login-type">
+        <a href="#" class="active" id="student-link">Student</a>
+        <a href="#" id="teacher-link">Teacher</a>
+        <a href="#" id="doctor-link">Doctor</a>
+        <a href="#" id="parent-link">Parent</a>
+      </div>
+      <form id="login-form">
+        <input
+          type="text"
+          name="username"
+          id="username"
+          placeholder="Username"
+          required
+        />
+        <input
+          type="password"
+          name="password"
+          id="password"
+          placeholder="Password"
+          required
+        />
+        <input
+          type="email"
+          name="email"
+          id="email"
+          placeholder="abc@def.com"
+          required
+        />
+        <input type="submit" value="Login" />
+        <a href="#" id="forgot-password">Forgot Password?</a>
+        <a href="#" id="forgot-password">Create Account!</a>
+      </form>
+      <a href="#">
+        <i class="fa-brands fa-google fa-xl" style="color: #790846"></i
+      ></a>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
