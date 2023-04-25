@@ -1,0 +1,40 @@
+*{
+    margin: 0;
+    padding:20px;
+}
+
+body{
+    background: #D99BFF;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 25px;
+}
+
+
+.container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;  
+}
+
+.container h3{
+    color: white;
+    font-size: x-large;
+    font-weight: bold;
+}
+
+.rec{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.rec p{
+    background: white;
+    font-size: x-large;
+    max-width: 50%;
+    border-radius: 12px;
+}
