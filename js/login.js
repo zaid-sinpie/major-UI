@@ -51,7 +51,7 @@ parentLink.addEventListener("click", (e) => {
   parentLink.classList.add(activeClassName);
 });
 
-const studentSubmission = async () => {
+const loginHandler = async (type) => {
   const email = loginForm.elements["email"].value;
   const password = loginForm.elements["password"].value;
   if (!email || !password) alert("Fill all details");
@@ -61,26 +61,34 @@ const studentSubmission = async () => {
       body: JSON.stringify({
         email,
         password,
+        type,
       }),
       headers: {
         "Content-Type": "application/json",
       },
     });
     const data = await response.json();
+    if (response.status != 200) return alert(data.message);
+    window.localStorage.setItem("token", data.user.token);
+    window.localStorage.setItem("email", data.user.email);
+    window.localStorage.setItem("userId", data.user._id);
+    window.localStorage.setItem("name", data.user.name);
+    window.localStorage.setItem("type", type);
+    if (type === STUDENT) window.location.assign("/pages/quiz.html");
+    if (type === DOCTOR) window.location.assign("/pages/docProfile.html");
+    if (type === PARENT) window.location.assign("/pages/ytvideos.html");
+    else if (type === TEACHER) window.location.assign("/pages/ytvideos.html");
     console.log(data);
   } catch (e) {
     console.log(e);
   }
 };
 
-const parentSubmission = async () => {
-  const email = loginForm.elements["email"].value;
-};
-
-loginForm.addEventListener("submit", (e) => {
+loginBtn.addEventListener("click", (e) => {
   e.preventDefault();
-  if (studentLink.classList.contains(activeClassName)) studentSubmission();
-  else if (doctorLink.classList.contains(activeClassName)) doctorSubmission();
-  else if (teacherLink.classList.contains(activeClassName)) teacherSubmission();
-  else if (parentLink.classList.contains(activeClassName)) parentSubmission();
+  if (studentLink.classList.contains(activeClassName)) loginHandler(STUDENT);
+  else if (doctorLink.classList.contains(activeClassName)) loginHandler(DOCTOR);
+  else if (teacherLink.classList.contains(activeClassName))
+    loginHandler(TEACHER);
+  else if (parentLink.classList.contains(activeClassName)) loginHandler(PARENT);
 });

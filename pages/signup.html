@@ -11,14 +11,14 @@
   </head>
   <body>
     <div class="container">
-      <h1>Login</h1>
+      <h1>Sign up</h1>
       <div class="login-type">
         <a href="#" class="active" id="parent-link">Parent</a>
         <a href="#" id="student-link">Student</a>
         <a href="#" id="teacher-link">Teacher</a>
         <a href="#" id="doctor-link">Doctor</a>
       </div>
-      <form id="login-form">
+      <form id="login-form" onsubmit="submitHandler">
         <input
           type="text"
           name="username"
@@ -56,10 +56,11 @@
           placeholder="Parent key"
           required
         />
-        <input type="submit" value="Sign up" />
-        <a href="#" id="forgot-password">Forgot Password?</a>
-        <a href="./login.html" id="forgot-password">Login!</a>
+        <!-- <input type="submit" value="Sign up" /> -->
+        <button type="submit" id="signup-form-submit-btn">Sign up</button>
       </form>
+      <a href="#" id="forgot-password">Forgot Password?</a>
+      <a href="./login.html" id="forgot-password">Login!</a>
       <a href="#">
         <i class="fa-brands fa-google fa-xl" style="color: #790846"></i
       ></a>

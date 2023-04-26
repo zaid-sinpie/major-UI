@@ -11,6 +11,7 @@ const loginBtn = document.querySelector("#login-btn");
 const flashElement = document.getElementById("flash");
 const parentKeyInput = document.querySelector("#parent-key");
 const teacherKeyInput = document.querySelector("#teacher-key");
+const signUpBtn = document.querySelector("#signup-form-submit-btn");
 
 const STUDENT = "STUDENT";
 const TEACHER = "TEACHER";
@@ -95,7 +96,8 @@ const studentSubmission = async () => {
     window.localStorage.setItem("email", data.user.email);
     window.localStorage.setItem("name", data.user.name);
     window.localStorage.setItem("userId", data.user._id);
-
+    window.localStorage.setItem("type", STUDENT);
+    window.location.assign("/pages/quiz.html");
     console.log(data);
   } catch (e) {
     console.log(e);
@@ -126,6 +128,8 @@ const doctorSubmission = async () => {
     window.localStorage.setItem("email", data.user.email);
     window.localStorage.setItem("userId", data.user._id);
     window.localStorage.setItem("name", data.user.name);
+    window.localStorage.setItem("type", DOCTOR);
+    window.location.assign("/pages/docProfile.html");
     console.log(data);
   } catch (e) {
     console.log(e);
@@ -156,7 +160,9 @@ const teacherSubmission = async () => {
     window.localStorage.setItem("email", data.user.email);
     window.localStorage.setItem("userId", data.user._id);
     window.localStorage.setItem("name", data.user.name);
+    window.localStorage.setItem("type", TEACHER);
     console.log(data);
+    window.location.assign("/pages/ytvideos.html");
   } catch (e) {
     console.log(e);
   }
@@ -187,15 +193,26 @@ const parentSubmission = async () => {
     window.localStorage.setItem("email", data.user.email);
     window.localStorage.setItem("userId", data.user._id);
     window.localStorage.setItem("name", data.user.name);
+    window.localStorage.setItem("type", PARENT);
     console.log(data);
+    window.location.assign("/pages/ytvideos.html");
   } catch (e) {
     console.log(e);
   }
 };
 
-loginForm.addEventListener("submit", async (e) => {
+loginForm.addEventListener("submit", (e) => {
   e.preventDefault();
+
   type = "";
+  if (studentLink.classList.contains(activeClassName)) studentSubmission();
+  else if (doctorLink.classList.contains(activeClassName)) doctorSubmission();
+  else if (teacherLink.classList.contains(activeClassName)) teacherSubmission();
+  else if (parentLink.classList.contains(activeClassName)) parentSubmission();
+});
+
+signUpBtn.addEventListener("click", (e) => {
+  e.preventDefault();
   if (studentLink.classList.contains(activeClassName)) studentSubmission();
   else if (doctorLink.classList.contains(activeClassName)) doctorSubmission();
   else if (teacherLink.classList.contains(activeClassName)) teacherSubmission();

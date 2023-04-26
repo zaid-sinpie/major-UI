@@ -15,6 +15,8 @@ body {
   width: 90%;
   padding-top: 100px;
   transform: translate(0px, 80px);
+  display: flex;
+  flex-direction: column;
 }
 
 .container h1 {
@@ -39,20 +41,6 @@ input[type="email"] {
   padding: 0.625rem;
   /* width: 80%; */
   /* padding-top: 20px; */
-}
-
-.container input[type="submit"] {
-  background-color: #d3a9e0;
-  border: none;
-  border-radius: 5px;
-  font-weight: bold;
-  font-size: larger;
-  color: #ffffff;
-  cursor: pointer;
-  padding: 10px;
-  margin-top: 20px;
-  width: 100%;
-  /* box-shadow: 5px 5px 10px #f5a6d2 ; */
 }
 
 .forgot-password {
@@ -101,4 +89,17 @@ input[type="email"] {
 
 .invisible {
   display: none;
+}
+
+form button {
+  background-color: #d3a9e0;
+  border: none;
+  border-radius: 5px;
+  font-weight: bold;
+  font-size: larger;
+  color: #ffffff;
+  cursor: pointer;
+  padding: 10px;
+  margin-top: 20px;
+  width: 100%;
 }
