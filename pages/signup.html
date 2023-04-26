@@ -3,7 +3,7 @@
   <head>
     <title>Login Page</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="../css/login.css" />
     <script
       src="https://kit.fontawesome.com/bb6d64a46b.js"
       crossorigin="anonymous"
@@ -13,17 +13,17 @@
     <div class="container">
       <h1>Login</h1>
       <div class="login-type">
-        <a href="#" class="active" id="student-link">Student</a>
+        <a href="#" class="active" id="parent-link">Parent</a>
+        <a href="#" id="student-link">Student</a>
         <a href="#" id="teacher-link">Teacher</a>
         <a href="#" id="doctor-link">Doctor</a>
-        <a href="#" id="parent-link">Parent</a>
       </div>
       <form id="login-form">
         <input
           type="text"
           name="username"
           id="username"
-          placeholder="Username"
+          placeholder="Name"
           required
         />
         <input
@@ -40,14 +40,30 @@
           placeholder="abc@def.com"
           required
         />
-        <input type="submit" value="Login" />
+        <input
+          type="text"
+          name="teacherKey"
+          id="teacher-key"
+          class="invisible"
+          placeholder="Teacher key"
+          required
+        />
+        <input
+          type="text"
+          name="parentKey"
+          id="parent-key"
+          class="invisible"
+          placeholder="Parent key"
+          required
+        />
+        <input type="submit" value="Sign up" />
         <a href="#" id="forgot-password">Forgot Password?</a>
-        <a href="#" id="forgot-password">Create Account!</a>
+        <a href="./login.html" id="forgot-password">Login!</a>
       </form>
       <a href="#">
         <i class="fa-brands fa-google fa-xl" style="color: #790846"></i
       ></a>
     </div>
-    <script src="script.js"></script>
-  </body>
+    <script src="../js/signup.js"></script>
+  </body>
 </html>

@@ -1,0 +1,104 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #d99bff;
+}
+
+.container {
+  background-color: rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+  margin: 50px auto;
+  max-width: 500px;
+  padding: 20px;
+  position: relative;
+  text-align: center;
+  width: 90%;
+  padding-top: 100px;
+  transform: translate(0px, 80px);
+}
+
+.container h1 {
+  color: #efebe0;
+  font-size: 24px;
+  margin-bottom: 0px;
+  transform: translate(0px, -20px);
+}
+
+.container label {
+  display: inline-block;
+  margin-bottom: 10px;
+  text-align: left;
+  width: 100%;
+}
+
+.container input[type="text"],
+input[type="password"],
+input[type="email"] {
+  border: none;
+  border-bottom: 1px solid #555555;
+  padding: 0.625rem;
+  /* width: 80%; */
+  /* padding-top: 20px; */
+}
+
+.container input[type="submit"] {
+  background-color: #d3a9e0;
+  border: none;
+  border-radius: 5px;
+  font-weight: bold;
+  font-size: larger;
+  color: #ffffff;
+  cursor: pointer;
+  padding: 10px;
+  margin-top: 20px;
+  width: 100%;
+  /* box-shadow: 5px 5px 10px #f5a6d2 ; */
+}
+
+.forgot-password {
+  color: #555555;
+  position: absolute;
+  right: 20px;
+  top: 20px;
+}
+
+.login-type {
+  position: absolute;
+  top: 20px;
+}
+
+.login-type a {
+  border: none;
+  color: #555555;
+  display: inline-block;
+  margin-right: 20px;
+  padding: 10px;
+  text-decoration: none;
+}
+
+.login-type a.active {
+  border-bottom: 2px solid #efebe0;
+  color: #efebe0;
+}
+
+#forgot-password {
+  color: #790846;
+  text-decoration: none;
+}
+
+#username,
+#password,
+#email,
+#parent-key,
+#teacher-key {
+  background: transparent;
+}
+
+#login-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.invisible {
+  display: none;
+}
