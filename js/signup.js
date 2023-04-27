@@ -1,4 +1,4 @@
-let isLoggedIn = false;
+
 
 // Selecting HTML elements
 const studentLink = document.querySelector("#student-link");
