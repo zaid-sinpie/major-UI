@@ -189,6 +189,7 @@ const parentSubmission = async () => {
     });
 
     const data = await response.json();
+    if(response.status != 200) return alert('Wrong details')
     window.localStorage.setItem("token", data.user.token);
     window.localStorage.setItem("email", data.user.email);
     window.localStorage.setItem("userId", data.user._id);
