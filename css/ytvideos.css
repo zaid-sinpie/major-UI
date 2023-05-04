@@ -9,6 +9,15 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  color: #000;
+}
+
+body{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-top:100px ;
 }
 
 .video-question {
@@ -28,14 +37,22 @@ form {
   align-items: center;
   justify-content: center;
   margin: 0.5rem 0 1.5rem 0;
+  background: #37dbc5;
+  padding: 200px;
+  border-radius: 12px;
+  box-shadow: 2px 2px 10px 0px;
 }
 
 form button {
   height: 2rem;
   width: 50%;
   background-color: white;
+  border-radius: 12px;
+  font-size: large;
+  font-weight: bold;
+  background: gray;
 }
 
 form button:hover {
-  background-color: gray;
+  background-color: rgb(38, 252, 127);
 }
