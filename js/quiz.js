@@ -1,6 +1,3 @@
-const btn = document.querySelector(".btn");
+const formElement = document.querySelector("form");
 
-
-btn.addEventListener("click", async (e) => {
-    
-});
+console.log(formElement.elements["question1"].value);
