@@ -1,0 +1,32 @@
+*{
+    margin: 0;
+    padding: 0;
+    background: #ECC9EE;
+}
+
+body{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 90px;
+}
+
+body h1{
+    font-size: 3rem;
+    background: #e3e3e3;
+    padding: 20px;
+    border-radius:12px;
+    box-shadow: 2px 2px 5px 0px;
+}
+
+.question{
+    color: rgb(0, 0, 0);
+    font-size: x-large;
+    padding: 20px;
+}
+
+.question label:first-child{
+    display: block;
+    margin-bottom: 10px;
+}
