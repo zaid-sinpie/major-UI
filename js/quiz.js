@@ -23,13 +23,27 @@ const countPositives = (formElement) => {
 const sendScores = async () => {
   try {
     const token = window.localStorage.getItem("token");
+    const depressionScore = localStorage.getItem("depressionScore");
+    const anxietyScore = localStorage.getItem("anxietyScore");
+    const stressScore = localStorage.getItem("stressScore");
+    const type = localStorage.getItem("type");
 
-    const response = await fetch("http://localhost:8000/api/student/score", {
-      method: "POST",
-      body: {
-        token,
-      },
-    });
+    const response = await fetch(
+      `http://localhost:8000/api/student/score?token=${token}`,
+      {
+        method: "POST",
+        body: JSON.stringify({
+          token,
+          depressionScore,
+          anxietyScore,
+          stressScore,
+          type,
+        }),
+        headers: {
+          "Content-Type": "application/json",
+        },
+      }
+    );
     const data = await response.json();
     console.log(data);
     localStorage.removeItem("stressScore");
