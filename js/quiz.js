@@ -46,12 +46,17 @@ const sendScores = async () => {
     );
     const data = await response.json();
     console.log(data);
-    
+
+
     localStorage.removeItem("stressScore");
     localStorage.removeItem("depressionScore");
     localStorage.removeItem("anxietyScore");
+    // localStorage.setItem('doctorsList', data.doctorsList)
+    doctorsList = data.doctorsList;
+    displayProfiles();
+    // window.location.assign("/pages/parterquizes.html");
   } catch (err) {
     console.log(err);
   }
-  window.location.assign("/pages/parterquizes.html");
+  
 };
