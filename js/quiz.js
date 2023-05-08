@@ -54,7 +54,7 @@ const sendScores = async () => {
     // localStorage.setItem('doctorsList', data.doctorsList)
     doctorsList = data.doctorsList;
     displayProfiles();
-    // window.location.assign("/pages/parterquizes.html");
+    window.location.assign("/pages/doctorList.html");
   } catch (err) {
     console.log(err);
   }
