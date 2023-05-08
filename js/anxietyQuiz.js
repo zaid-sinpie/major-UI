@@ -9,7 +9,7 @@ anxietyFormElement.addEventListener("submit", async (e) => {
   }
 
   anxietyScore = countPositives(anxietyFormElement);
-  
+  localStorage.setItem("anxietyScore", anxietyScore);
 
   window.location.assign("/pages/depressionquiz.html");
 });
