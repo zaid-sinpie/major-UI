@@ -1,6 +1,16 @@
 const stressFormElement = document.querySelector(".stress-form");
 
-stressFormElement.addEventListener("submit", async (e) => {
+if (!("anxietyScore" in localStorage)) {
+  alert("attempt anxiety quiz and then come back");
+  window.location.assign("/pages/anxietyQuiz.html");
+}
+
+if (!("depressionScore" in localStorage)) {
+  alert("attempt depression quiz and then come back");
+  window.location.assign("/pages/depressionquiz.html");
+}
+
+stressFormElement.addEventListener("submit", (e) => {
   e.preventDefault();
   console.log(depressionScore, anxietyScore, stressScore);
   const token = window.localStorage.getItem("token");
@@ -10,9 +20,6 @@ stressFormElement.addEventListener("submit", async (e) => {
   }
   stressScore = countPositives(stressFormElement);
   localStorage.setItem("stressScore", stressScore);
-  if (!("anxietyScore" in localStorage))
-    return window.location.assign("/pages/anxietyQuiz.html");
-  if (!("depressionScore" in localStorage))
-    return window.location.assign("/pages/depressionquiz.html");
+
   sendScores();
 });

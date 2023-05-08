@@ -34,9 +34,9 @@ const sendScores = async () => {
     console.log(data);
     localStorage.removeItem("stressScore");
     localStorage.removeItem("depressionScore");
-    localStorage.remove("anxietyScore");
-    window.location.assign("/pages/parterquizes.html");
+    localStorage.removeItem("anxietyScore");
   } catch (err) {
     console.log(err);
   }
+  window.location.assign("/pages/parterquizes.html");
 };

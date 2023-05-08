@@ -1,4 +1,10 @@
 const depressionFormElement = document.querySelector(".depression-form");
+
+if (!("anxietyScore" in localStorage)) {
+  alert("Please answer anxiety quiz first");
+  window.location.assign("/pages/anxietyQuiz.html");
+}
+
 depressionFormElement.addEventListener("submit", async (e) => {
   e.preventDefault();
   console.log(depressionScore, anxietyScore, stressScore);
@@ -11,10 +17,5 @@ depressionFormElement.addEventListener("submit", async (e) => {
   depressionScore = countPositives(depressionFormElement);
   localStorage.setItem("depressionScore", depressionScore);
 
-  if (!("stressScore" in localStorage))
-    return window.location.assign("/pages/stressQuiz.html");
-  if (!("anxietyScore" in localStorage))
-    return window.location.assign("/pages/anxietyQuiz.html");
-
-  sendScores();
+  window.location.assign("/pages/stressQuiz.html");
 });
