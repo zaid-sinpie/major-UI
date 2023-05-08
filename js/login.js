@@ -74,7 +74,7 @@ const loginHandler = async (type) => {
     window.localStorage.setItem("userId", data.user._id);
     window.localStorage.setItem("name", data.user.name);
     window.localStorage.setItem("type", type);
-    if (type === STUDENT) window.location.assign("/pages/quiz.html");
+    if (type === STUDENT) window.location.assign("/pages/anxietyQuiz.html");
     if (type === DOCTOR) window.location.assign("/pages/docProfile.html");
     if (type === PARENT) window.location.assign("/pages/ytvideos.html");
     else if (type === TEACHER) window.location.assign("/pages/ytvideos.html");
