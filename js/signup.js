@@ -12,6 +12,7 @@ const flashElement = document.getElementById("flash");
 const parentKeyInput = document.querySelector("#parent-key");
 const teacherKeyInput = document.querySelector("#teacher-key");
 const signUpBtn = document.querySelector("#signup-form-submit-btn");
+const tagInput = document.querySelector('#tag');
 
 const STUDENT = "STUDENT";
 const TEACHER = "TEACHER";
@@ -22,11 +23,13 @@ const activeClassName = "active";
 const removeParentTeacherInputs = () => {
   parentKeyInput.classList.add("invisible");
   teacherKeyInput.classList.add("invisible");
+  tagInput.classList.remove('invisible')
 };
 
 const addParentTeacherInputs = () => {
   parentKeyInput.classList.remove("invisible");
   teacherKeyInput.classList.remove("invisible");
+  tagInput.classList.add('invisible');
 };
 
 // Setting event listeners for each login type link
@@ -55,6 +58,7 @@ doctorLink.addEventListener("click", (e) => {
   studentLink.classList.remove("active");
   teacherLink.classList.remove("active");
   doctorLink.classList.add("active");
+
   parentLink.classList.remove(activeClassName);
 });
 
@@ -108,6 +112,7 @@ const doctorSubmission = async () => {
   const name = loginForm.elements["username"].value;
   const password = loginForm.elements["password"].value;
   const email = loginForm.elements["email"].value;
+  const tags = loginForm.elements['tags'].value.split(',');
 
   if (!name || !password || !email) alert("Fill all details");
   try {
@@ -118,6 +123,7 @@ const doctorSubmission = async () => {
         password,
         email,
         type: "DOCTOR",
+        tags
       }),
       headers: {
         "Content-Type": "application/json",

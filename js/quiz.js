@@ -32,6 +32,7 @@ const sendScores = async () => {
     });
     const data = await response.json();
     console.log(data);
+    
     localStorage.removeItem("stressScore");
     localStorage.removeItem("depressionScore");
     localStorage.removeItem("anxietyScore");
