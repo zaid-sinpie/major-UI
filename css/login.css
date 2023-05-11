@@ -139,3 +139,11 @@ input{
   border: none;
   outline: none;
 }
+
+.siupfor{
+  display: flex;
+  justify-content: space-between;
+  padding-top: 15px;
+  font-style: italic;
+  color: #00C9FF;
+}
