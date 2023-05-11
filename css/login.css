@@ -134,3 +134,8 @@ form button {
 .google{
   font-size: larger;
 }
+
+input{
+  border: none;
+  outline: none;
+}
