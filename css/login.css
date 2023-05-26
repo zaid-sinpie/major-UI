@@ -1,13 +1,13 @@
 body {
   font-family: Arial, sans-serif;
-  background-image:linear-gradient(to right,#FEAC5E,#C779D0,#4BC0C8) ;
+  background-image: linear-gradient(to right, #feac5e, #c779d0, #4bc0c8);
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
 .container {
-  background-color: rgba(255,255,255, 0.2);
+  background-color: rgba(255, 255, 255, 0.2);
   border: 1px solid #e3e3ee;
   border-radius: 20px;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
@@ -96,7 +96,7 @@ input[type="email"] {
 }
 
 form button {
-  background-image:linear-gradient(to right,#ddd6fe,#faaca8) ;
+  background-image: linear-gradient(to right, #ddd6fe, #faaca8);
   border: 2px solid rgb(234, 255, 191);
   border-radius: 5px;
   font-weight: bold;
@@ -108,42 +108,43 @@ form button {
   width: 100%;
 }
 
-.forcre{
+.forcre {
   display: flex;
   justify-content: space-between;
   /* padding-top: 15px; */
   font-style: italic;
-  color: #00C9FF;
+  color: #00c9ff;
 }
 
-.google{
-  transform: translate(0px,-14px);
+.google {
+  transform: translate(0px, -14px);
 }
 
-#login-form{
+#login-form {
   display: flex;
   flex-direction: column;
   gap: 15px;
 }
 
-#forgot-password{
+#forgot-password {
   color: #ffffff;
-  text-decoration:solid ;
+  text-decoration: solid;
+  z-index: 1000;
 }
 
-.google{
+.google {
   font-size: larger;
 }
 
-input{
+input {
   border: none;
   outline: none;
 }
 
-.siupfor{
+.siupfor {
   display: flex;
   justify-content: space-between;
   padding-top: 15px;
   font-style: italic;
-  color: #00C9FF;
+  color: #00c9ff;
 }
