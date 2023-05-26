@@ -42,6 +42,8 @@ studentLink.addEventListener("click", function (e) {
   teacherLink.classList.remove("active");
   doctorLink.classList.remove("active");
   parentLink.classList.remove(activeClassName);
+  tagInput.classList.add("invisible");
+  genderInput.classList.add("invisible");
 });
 
 teacherLink.addEventListener("click", function (e) {
