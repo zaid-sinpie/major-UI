@@ -7,7 +7,7 @@
 .background {
   /* background-color: #756CE3; */
   background: url("./brain.jpg") no-repeat;
-  background-size: 1600px 800px;
+  background-size: cover;
   height: 100vh;
   width: 100vw;
 }
@@ -52,10 +52,13 @@
 .call-to-action {
   /* margin-top: 20%; */
   background-color: black;
+  height: 50px;
+  width: 400px;
   color: white;
   box-sizing: border-box;
-  border-radius: 1rem;
+  border-radius: 3rem;
   padding: 0.5rem 5rem;
+  font-size: x-large;
 }
 
 .doc-icon {

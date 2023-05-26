@@ -1,15 +1,19 @@
 body {
   font-family: Arial, sans-serif;
-  background-color: #d99bff;
+  background-image:linear-gradient(to right,#FEAC5E,#C779D0,#4BC0C8) ;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .container {
-  background-color: rgba(0, 0, 0, 0.2);
-  border-radius: 10px;
+  background-color: rgba(255,255,255, 0.2);
+  border: 1px solid #e3e3ee;
+  border-radius: 20px;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
   margin: 50px auto;
   max-width: 500px;
-  padding: 20px;
+  padding: 40px;
   position: relative;
   text-align: center;
   width: 90%;
@@ -92,8 +96,8 @@ input[type="email"] {
 }
 
 form button {
-  background-color: #d3a9e0;
-  border: none;
+  background-image:linear-gradient(to right,#ddd6fe,#faaca8) ;
+  border: 2px solid rgb(234, 255, 191);
   border-radius: 5px;
   font-weight: bold;
   font-size: larger;
@@ -102,4 +106,44 @@ form button {
   padding: 10px;
   margin-top: 20px;
   width: 100%;
+}
+
+.forcre{
+  display: flex;
+  justify-content: space-between;
+  /* padding-top: 15px; */
+  font-style: italic;
+  color: #00C9FF;
+}
+
+.google{
+  transform: translate(0px,-14px);
+}
+
+#login-form{
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+#forgot-password{
+  color: #ffffff;
+  text-decoration:solid ;
+}
+
+.google{
+  font-size: larger;
+}
+
+input{
+  border: none;
+  outline: none;
+}
+
+.siupfor{
+  display: flex;
+  justify-content: space-between;
+  padding-top: 15px;
+  font-style: italic;
+  color: #00C9FF;
 }
