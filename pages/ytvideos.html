@@ -11,7 +11,7 @@
     <h1>YouTube Videos</h1>
     <div class="bg">
       <div class="container">
-        <form action="">
+        <form>
           <div class="video-question">
             <div class="yt-video-wrapper">
               <iframe
@@ -26,9 +26,19 @@
             </div>
             <div class="input-wrapper">
               <label for="psycho-yes">Yes</label>
-              <input type="radio" name="psycho-video" id="psycho-yes" />
+              <input
+                type="radio"
+                name="psycho-video"
+                id="psycho-yes"
+                value="yes"
+              />
               <label for="psycho-no">No</label>
-              <input type="radio" name="psycho-video" id="psycho-yes" />
+              <input
+                type="radio"
+                name="psycho-video"
+                id="psycho-no"
+                value="no"
+              />
             </div>
           </div>
           <div class="video-question">
@@ -45,9 +55,14 @@
             </div>
             <div class="input-wrapper">
               <label for="anger-yes">Yes</label>
-              <input type="radio" name="anger-video" id="anger-yes" />
+              <input
+                type="radio"
+                name="anger-video"
+                id="anger-yes"
+                value="yes"
+              />
               <label for="anger-no">No</label>
-              <input type="radio" name="anger-video" id="anger-no" />
+              <input type="radio" name="anger-video" id="anger-no" value="no" />
             </div>
           </div>
           <div class="video-question">
@@ -64,14 +79,25 @@
             </div>
             <div class="input-wrapper">
               <label for="autistic-yes">Yes</label>
-              <input type="radio" name="autistic-video" id="autistic-yes" />
+              <input
+                type="radio"
+                name="autistic-video"
+                id="autistic-yes"
+                value="yes"
+              />
               <label for="autistic-no">No</label>
-              <input type="radio" name="autistic-video" id="autistic-no" />
+              <input
+                type="radio"
+                name="autistic-video"
+                id="autistic-no"
+                value="no"
+              />
             </div>
           </div>
           <button>Submit</button>
         </form>
       </div>
     </div>
+    <script src="../js/ytvideos.js"></script>
   </body>
 </html>
