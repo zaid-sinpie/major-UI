@@ -47,16 +47,20 @@ const sendScores = async () => {
     const data = await response.json();
     console.log(data);
 
-
     localStorage.removeItem("stressScore");
     localStorage.removeItem("depressionScore");
     localStorage.removeItem("anxietyScore");
     // localStorage.setItem('doctorsList', data.doctorsList)
-    doctorsList = data.doctorsList;
-    displayProfiles();
+    // doctorsList = data.doctorList;
+    alert(data.message);
+    for (let index = 0; index < data.doctorList.length; index++) {
+      const element = data.doctorList[index];
+      console.log(element);
+      localStorage.setItem(`doctor${index}`, element._id);
+    }
+    // displayProfiles();
     window.location.assign("/pages/doctorList.html");
   } catch (err) {
     console.log(err);
   }
-  
 };

@@ -12,7 +12,8 @@ const flashElement = document.getElementById("flash");
 const parentKeyInput = document.querySelector("#parent-key");
 const teacherKeyInput = document.querySelector("#teacher-key");
 const signUpBtn = document.querySelector("#signup-form-submit-btn");
-const tagInput = document.querySelector('#tag');
+const tagInput = document.querySelector("#tag");
+const genderInput = document.querySelector("#gender");
 
 const STUDENT = "STUDENT";
 const TEACHER = "TEACHER";
@@ -23,13 +24,15 @@ const activeClassName = "active";
 const removeParentTeacherInputs = () => {
   parentKeyInput.classList.add("invisible");
   teacherKeyInput.classList.add("invisible");
-  tagInput.classList.remove('invisible')
+  tagInput.classList.remove("invisible");
+  genderInput.classList.remove("invisible");
 };
 
 const addParentTeacherInputs = () => {
   parentKeyInput.classList.remove("invisible");
   teacherKeyInput.classList.remove("invisible");
-  tagInput.classList.add('invisible');
+  tagInput.classList.add("invisible");
+  genderInput.classList.add("invisible");
 };
 
 // Setting event listeners for each login type link
@@ -57,8 +60,7 @@ doctorLink.addEventListener("click", (e) => {
   removeParentTeacherInputs();
   studentLink.classList.remove("active");
   teacherLink.classList.remove("active");
-  doctorLink.classList.add("active");
-
+  doctorLink.classList.add(activeClassName);
   parentLink.classList.remove(activeClassName);
 });
 
@@ -68,6 +70,7 @@ parentLink.addEventListener("click", (e) => {
   studentLink.classList.remove(activeClassName);
   teacherLink.classList.remove(activeClassName);
   doctorLink.classList.remove(activeClassName);
+
   parentLink.classList.add(activeClassName);
 });
 
@@ -112,7 +115,8 @@ const doctorSubmission = async () => {
   const name = loginForm.elements["username"].value;
   const password = loginForm.elements["password"].value;
   const email = loginForm.elements["email"].value;
-  const tags = loginForm.elements['tags'].value.split(',');
+  const tags = loginForm.elements["tags"].value.split(",");
+  const gender = loginForm.elements["gender"].value;
 
   if (!name || !password || !email) alert("Fill all details");
   try {
@@ -123,7 +127,8 @@ const doctorSubmission = async () => {
         password,
         email,
         type: "DOCTOR",
-        tags
+        tags,
+        gender,
       }),
       headers: {
         "Content-Type": "application/json",
@@ -195,7 +200,7 @@ const parentSubmission = async () => {
     });
 
     const data = await response.json();
-    if(response.status != 200) return alert('Wrong details')
+    if (response.status != 200) return alert("Wrong details");
     window.localStorage.setItem("token", data.user.token);
     window.localStorage.setItem("email", data.user.email);
     window.localStorage.setItem("userId", data.user._id);
