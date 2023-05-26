@@ -24,15 +24,13 @@ const activeClassName = "active";
 const removeParentTeacherInputs = () => {
   parentKeyInput.classList.add("invisible");
   teacherKeyInput.classList.add("invisible");
-  tagInput.classList.remove("invisible");
-  genderInput.classList.remove("invisible");
+  tagInput.classList.add("invisible");
+  genderInput.classList.add("invisible");
 };
 
 const addParentTeacherInputs = () => {
   parentKeyInput.classList.remove("invisible");
   teacherKeyInput.classList.remove("invisible");
-  tagInput.classList.add("invisible");
-  genderInput.classList.add("invisible");
 };
 
 // Setting event listeners for each login type link
@@ -53,6 +51,8 @@ teacherLink.addEventListener("click", function (e) {
   doctorLink.classList.remove("active");
   teacherLink.classList.add("active");
   parentLink.classList.remove(activeClassName);
+  tagInput.classList.remove("invisible");
+  genderInput.classList.remove("invisible");
 });
 
 doctorLink.addEventListener("click", (e) => {
@@ -62,6 +62,8 @@ doctorLink.addEventListener("click", (e) => {
   teacherLink.classList.remove("active");
   doctorLink.classList.add(activeClassName);
   parentLink.classList.remove(activeClassName);
+  tagInput.classList.remove("invisible");
+  genderInput.classList.remove("invisible");
 });
 
 parentLink.addEventListener("click", (e) => {
