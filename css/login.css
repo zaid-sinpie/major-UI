@@ -82,7 +82,9 @@ input[type="email"] {
 #password,
 #email,
 #parent-key,
-#teacher-key {
+#teacher-key,
+#gender,
+#tag {
   background: transparent;
 }
 
