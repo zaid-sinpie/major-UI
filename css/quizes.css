@@ -100,7 +100,8 @@ body h1{
 }
 
 .btnsb{
-    transform: translate(300px);
+  margin-left: auto;
+  margin-right: auto;
 }
 
 body {
