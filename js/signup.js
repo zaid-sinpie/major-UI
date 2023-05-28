@@ -108,7 +108,7 @@ const studentSubmission = async () => {
     window.localStorage.setItem("name", data.user.name);
     window.localStorage.setItem("userId", data.user._id);
     window.localStorage.setItem("type", STUDENT);
-    window.location.assign("/pages/quiz.html");
+    window.location.assign("/pages/anxietyQuiz.html");
     console.log(data);
   } catch (e) {
     console.log(e);
