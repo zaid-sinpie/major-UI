@@ -120,6 +120,7 @@ body {
   border-radius: 6px;
   margin: 50px;
 }
+
 @keyframes gradient {
     0% {
         background-position: 0% 50%;
