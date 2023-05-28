@@ -1,57 +1,36 @@
-const listDiv = document.querySelector(".doctor-list");
+const ageP = document.querySelector(".age");
+const nameP = document.querySelector(".name");
+const specialitiesP = document.querySelector(".specialities");
+const ratingP = document.querySelector(".rating");
+const treatedP = document.querySelector(".no_of_patients");
 
-const getAllRecommendedDoctors = async () => {
-  const doctorList = [];
-  let i = 0;
-  while (`doctor${i}` in localStorage) {
-    const doctorId = localStorage.getItem(`doctor${i}`);
-    const response = await fetch(
-      `http://localhost:8000/api/doctor/${doctorId}`
-    );
-    const data = await response.json();
-    const doctor = await data.doctor;
-    doctorList.push(doctor);
-    i++;
-  }
-  return doctorList;
+const getDoctor = async () => {
+  const urlString = window.location.href.toLowerCase();
+  const url = new URL(urlString);
+  const id = url.searchParams.get("id");
+  console.log(id);
+  const response = await fetch("http://localhost:8000/api/doctor/" + id);
+  const data = await response.json();
+  console.log(data);
+  return data.doctor;
 };
 
-const deleteAllDoctorsFromLocalStorage = () => {
-  let i = 0;
-  while (`doctor${i}` in localStorage) {
-    localStorage.removeItem(`doctor${i}`);
+displayDoctor = async () => {
+  const data = await getDoctor();
+  nameP.textContent = `Name: ${data.name}`;
+  ageP.textContent = `Age: ${data.age || 12}`;
+  let specialities = "";
+  for (let i = 0; i < data.tags.length; i++) {
+    specialities += data.tags[i];
+    if (i != data.tags.length - 1) specialities += ",";
   }
+  specialitiesP.textContent = `Specialities: ${specialities}`;
+  const numberOfPatientsTreated = Math.floor(Math.random() * 200);
+  treatedP.textContent = `Number of patients operated: ${
+    numberOfPatientsTreated > 100 ? "100+" : numberOfPatientsTreated
+  }`;
+  const rating = (Math.random() * 5 + 1).toFixed(1);
+  ratingP.textContent = `Rating: ${rating}`;
 };
 
-const ListOutAllDoctors = async () => {
-  const doctorList = await getAllRecommendedDoctors();
-  console.log(doctorList);
-  for (let index = 0; index < doctorList.length; index++) {
-    const element = doctorList[index];
-    const doctorDiv = document.createElement("div");
-    const namePara = document.createElement("p");
-    const nameText = document.createTextNode(`Name: ${element.name}`);
-    namePara.appendChild(nameText);
-    doctorDiv.appendChild(namePara);
-    const emailPara = document.createElement("p");
-    const emailText = document.createTextNode(`Email: ${element.email}`);
-    emailPara.appendChild(emailText);
-    doctorDiv.appendChild(emailPara);
-    const tagsPara = document.createElement("p");
-    let tagText = "";
-    for (let i = 0; i < element.tags.length; i++) {
-      tagText += element.tags[i];
-      if (i != element.tags.length - 1) {
-        tagText += ",";
-      }
-    }
-    tagText = document.createTextNode("Specializes in: " + tagText);
-    tagsPara.appendChild(tagText);
-    doctorDiv.appendChild(tagsPara);
-    listDiv.appendChild(doctorDiv);
-  }
-
-  deleteAllDoctorsFromLocalStorage();
-};
-
-ListOutAllDoctors();
+displayDoctor();
