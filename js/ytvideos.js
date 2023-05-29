@@ -1,5 +1,5 @@
 const submitBtn = document.querySelector("form button");
-const inputs = document.querySelectorAll("form input[value='yes']:checked");
+const inputs = document.querySelectorAll("form input[value='yes']");
 
 console.log(submitBtn);
 console.log(inputs);
@@ -11,7 +11,7 @@ for (let i = 0; i < inputs.length; i++) {
 const getNumberofYesCheckedInputs = () => {
   let num = 0;
   for (let i = 0; i < inputs.length; i++) {
-    if (inputs[i].value === "yes") {
+    if (inputs[i].checked) {
       num++;
       console.log(inputs[i].checked);
     }
