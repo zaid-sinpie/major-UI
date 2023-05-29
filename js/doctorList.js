@@ -93,6 +93,10 @@ const provideList = async () => {
     ratingPara.appendChild(document.createTextNode(`Rating: ${randomRating}`));
     doctorDiv.appendChild(tagsPara);
     doctorDiv.appendChild(ratingPara);
+    const link = document.createElement("a");
+    link.appendChild(document.createTextNode(`Checkout here`));
+    link.href = `/pages/docProfile.html?id=${element._id}`;
+    doctorDiv.appendChild(link);
     doctorListDiv.appendChild(doctorDiv);
     doctorDiv.classList.add("doctor");
     namePara.classList.add("name");
