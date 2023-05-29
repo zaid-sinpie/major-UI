@@ -34,6 +34,14 @@ displayDoctor = async () => {
   ratingP.textContent = `Rating: ${rating}`;
   if (localStorage.getItem("type") === "DOCTOR")
     appointBtn.classList.add("invisible");
+  else {
+    const result = await navigator.permissions.query({
+      name: "write-on-clipboard",
+    });
+    if (result.state == "granted" || result.state == "prompt") {
+      await navigator.clipboard.writeText(data.email);
+    }
+  }
 };
 
 displayDoctor();
