@@ -43,4 +43,14 @@ body {
   background: transparent;
   border-radius: 12px;
   box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+  gap: 5px;
+}
+
+.check-out{
+  text-decoration: none;
+  font-size: larger;
+  color: rgb(0, 208, 255);
+  border: 1px solid rgb(184, 233, 254);
+  background: #dafffc;
+  border-radius: 12px;
 }

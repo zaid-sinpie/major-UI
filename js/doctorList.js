@@ -96,6 +96,7 @@ const provideList = async () => {
     const link = document.createElement("a");
     link.appendChild(document.createTextNode(`Checkout here`));
     link.href = `/pages/docProfile.html?id=${element._id}`;
+    link.classList.add('check-out');
     doctorDiv.appendChild(link);
     doctorListDiv.appendChild(doctorDiv);
     doctorDiv.classList.add("doctor");
