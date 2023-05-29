@@ -36,7 +36,7 @@ displayDoctor = async () => {
     appointBtn.classList.add("invisible");
   else {
     const result = await navigator.permissions.query({
-      name: "write-on-clipboard",
+      name: "clipboard-write",
     });
     if (result.state == "granted" || result.state == "prompt") {
       await navigator.clipboard.writeText(data.email);
