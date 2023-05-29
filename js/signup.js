@@ -108,7 +108,7 @@ const studentSubmission = async () => {
     window.localStorage.setItem("name", data.user.name);
     window.localStorage.setItem("userId", data.user._id);
     window.localStorage.setItem("type", STUDENT);
-    window.location.assign("/pages/quiz.html");
+    window.location.assign("/pages/anxietyQuiz.html");
     console.log(data);
   } catch (e) {
     console.log(e);
@@ -144,7 +144,7 @@ const doctorSubmission = async () => {
     window.localStorage.setItem("userId", data.user._id);
     window.localStorage.setItem("name", data.user.name);
     window.localStorage.setItem("type", DOCTOR);
-    window.location.assign("/pages/docProfile.html");
+    window.location.assign("/pages/docProfile.html?id=" + data.user._id);
     console.log(data);
   } catch (e) {
     console.log(e);

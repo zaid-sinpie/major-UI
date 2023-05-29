@@ -69,14 +69,15 @@ const loginHandler = async (type) => {
     });
     const data = await response.json();
     if (response.status != 200) return alert(data.message);
-    window.localStorage.clear()
+    window.localStorage.clear();
     window.localStorage.setItem("token", data.token);
     window.localStorage.setItem("email", data.user.email);
     window.localStorage.setItem("userId", data.user._id);
     window.localStorage.setItem("name", data.user.name);
     window.localStorage.setItem("type", type);
     if (type === STUDENT) window.location.assign("/pages/anxietyQuiz.html");
-    if (type === DOCTOR) window.location.assign("/pages/docProfile.html");
+    if (type === DOCTOR)
+      window.location.assign(`/pages/docProfile.html?id=${data.user._id}`);
     if (type === PARENT) window.location.assign("/pages/ytvideos.html");
     else if (type === TEACHER) window.location.assign("/pages/ytvideos.html");
     console.log(data);

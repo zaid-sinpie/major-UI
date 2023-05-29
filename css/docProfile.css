@@ -25,13 +25,13 @@ body {
   border: 1px solid #7aa7c7;
   border-radius: 12px;
   margin-top: 40%;
-  margin-bottom:40% ;
+  margin-bottom: 40%;
   padding: 20px;
   gap: 10px;
 }
 
 /*Profile image*/
-.profileimg{
+.profileimg {
   border: 1px solid #7aa7c7;
   border-radius: 50%;
 }
@@ -46,14 +46,15 @@ body {
 
 .rec p {
   background: #b3d3ea;
-  color:#2c5777 ; 
-  font-family: -apple-system,system-ui,"Segoe UI","Liberation Sans",sans-serif;
+  color: #2c5777;
+  font-family: -apple-system, system-ui, "Segoe UI", "Liberation Sans",
+    sans-serif;
   font-size: 15px;
   border: 1px solid #7aa7c7;
   border-radius: 12px;
   margin: 10px;
   padding: 10px;
-  font-weight:500;
+  font-weight: 500;
 }
 
 /* button */
@@ -61,18 +62,19 @@ body {
   background-color: #e1ecf4;
   border-radius: 3px;
   border: 1px solid #7aa7c7;
-  box-shadow: rgba(255, 255, 255, .7) 0 1px 0 0 inset;
+  box-shadow: rgba(255, 255, 255, 0.7) 0 1px 0 0 inset;
   box-sizing: border-box;
   color: #39739d;
   cursor: pointer;
   display: inline-block;
-  font-family: -apple-system,system-ui,"Segoe UI","Liberation Sans",sans-serif;
+  font-family: -apple-system, system-ui, "Segoe UI", "Liberation Sans",
+    sans-serif;
   font-size: 13px;
   font-weight: 400;
   line-height: 1.15385;
   margin: 0;
   outline: none;
-  padding: 8px .8em;
+  padding: 8px 0.8em;
   position: relative;
   text-align: center;
   text-decoration: none;
@@ -90,7 +92,7 @@ body {
 }
 
 .btn:focus {
-  box-shadow: 0 0 0 4px rgba(0, 149, 255, .15);
+  box-shadow: 0 0 0 4px rgba(0, 149, 255, 0.15);
 }
 
 .btn:active {
@@ -112,3 +114,7 @@ body {
       background-position: 0% 50%;
   }
 } */
+
+.invisible {
+  display: none;
+}
