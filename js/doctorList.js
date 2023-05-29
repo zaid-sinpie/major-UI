@@ -56,7 +56,7 @@
 
 // ListOutAllDoctors();
 
-const doctorListDiv = document.querySelector(".doctor-list");
+const doctorListDiv = document.querySelector(".container");
 
 const getAllDoctors = async () => {
   const response = await fetch("http://localhost:8000/api/doctors");
@@ -69,6 +69,7 @@ const provideList = async () => {
   for (let i = 0; i < doctorList.length; i++) {
     const element = doctorList[i];
     const doctorDiv = document.createElement("div");
+
     const namePara = document.createElement("p");
     const nameText = document.createTextNode(`Name: ${element.name}`);
     namePara.appendChild(nameText);
@@ -87,9 +88,16 @@ const provideList = async () => {
     }
     tagText = document.createTextNode(`Specializes in: ${tagText}`);
     tagsPara.appendChild(tagText);
+    const randomRating = Math.floor(Math.random() * 5 + 1).toFixed(1);
+    const ratingPara = document.createElement("p");
+    ratingPara.appendChild(document.createTextNode(`Rating: ${randomRating}`));
     doctorDiv.appendChild(tagsPara);
+    doctorDiv.appendChild(ratingPara);
     doctorListDiv.appendChild(doctorDiv);
     doctorDiv.classList.add("doctor");
+    namePara.classList.add("name");
+    emailPara.classList.add("email");
+    tagsPara.classList.add("tags");
   }
 };
 

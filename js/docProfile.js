@@ -3,6 +3,7 @@ const nameP = document.querySelector(".name");
 const specialitiesP = document.querySelector(".specialities");
 const ratingP = document.querySelector(".rating");
 const treatedP = document.querySelector(".no_of_patients");
+const appointBtn = document.querySelector(".btn");
 
 const getDoctor = async () => {
   const urlString = window.location.href.toLowerCase();
@@ -31,6 +32,8 @@ displayDoctor = async () => {
   }`;
   const rating = (Math.random() * 5 + 1).toFixed(1);
   ratingP.textContent = `Rating: ${rating}`;
+  if (localStorage.getItem("type") === "DOCTOR")
+    appointBtn.classList.add("invisible");
 };
 
 displayDoctor();
