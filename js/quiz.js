@@ -1,9 +1,9 @@
 const type = window.localStorage.getItem("type");
 if (type != "STUDENT") {
-  alert("Only students can access this page");
-  if (type === "PARENT") window.location.assign("../pages/index_parent.html");
-  if (type === "DOCTOR") window.location.assign("../pages/docProfile.html");
-  if (type === "TEACHER") window.location.assign("../pages/index_teacher.html");
+  
+  if (type === "PARENT") openModal('Only students can access this page, you are logged in as Parent', () => window.location.assign("../pages/index_parent.html"));
+  if (type === "DOCTOR") openModal('Only students can access this page, you are logged in as Doctor', () => window.location.assign("../pages/docProfile.html"));
+  if (type === "TEACHER") openModal('Only students can access this page, you are logged in as Teacher', window.location.assign("../pages/index_teacher.html"));
 }
 
 let anxietyScore = -1;
@@ -52,7 +52,7 @@ const sendScores = async () => {
     localStorage.removeItem("anxietyScore");
     // localStorage.setItem('doctorsList', data.doctorsList)
     // doctorsList = data.doctorList;
-    alert(data.message);
+    openModal(data.message, () => {})
     for (let index = 0; index < data.doctorList.length; index++) {
       const element = data.doctorList[index];
       console.log(element);

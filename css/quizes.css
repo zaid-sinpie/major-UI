@@ -3,6 +3,12 @@
     padding: 0;
 }
 
+body {
+  scrollbar-width: 1px;
+  scrollbar-width: 3px;
+    /* overflow-y: scroll; */
+}
+
 /* body{
     display: flex;
     flex-direction: column;
@@ -19,6 +25,7 @@ body h1{
     border: 2px solid rgb(65, 63, 63);
     border-radius:12px;
     /* box-shadow: 2px 2px 5px 0px; */
+    
 }
 
 .question{

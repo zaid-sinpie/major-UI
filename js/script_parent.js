@@ -10,8 +10,7 @@ const getParentDetails = async () => {
   if (!type || !userId || !token || !email)
     return window.location.assign("../pages/login.html");
   if (type != PARENT) {
-    alert("Only parents can access this page");
-    return window.location.assign("../index.html");
+    return openModal('Only parent can access this page', () => window.location.assign('../index.html'))
   }
   try {
     const response = await fetch("http://localhost:8000/api/parent/detail", {

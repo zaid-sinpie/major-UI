@@ -1,13 +1,15 @@
 const stressFormElement = document.querySelector(".stress-form");
 
 if (!("anxietyScore" in localStorage)) {
-  alert("attempt anxiety quiz and then come back");
-  window.location.assign("/pages/anxietyQuiz.html");
+  openModal("Please attempt anxiety quiz and then come back", () =>
+    window.location.assign("/pages/anxietyQuiz.html")
+  );
 }
 
 if (!("depressionScore" in localStorage)) {
-  alert("attempt depression quiz and then come back");
-  window.location.assign("/pages/depressionquiz.html");
+  openModal("Please attempt depression quiz and then come back", () =>
+    window.location.assign("/pages/depressionQuiz.html")
+  );
 }
 
 stressFormElement.addEventListener("submit", (e) => {

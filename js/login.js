@@ -54,7 +54,7 @@ parentLink.addEventListener("click", (e) => {
 const loginHandler = async (type) => {
   const email = loginForm.elements["email"].value;
   const password = loginForm.elements["password"].value;
-  if (!email || !password) alert("Fill all details");
+  if (!email || !password) openModal('Fill all details')
   try {
     const response = await fetch("http://localhost:8000/auth/login", {
       method: "POST",
@@ -68,7 +68,7 @@ const loginHandler = async (type) => {
       },
     });
     const data = await response.json();
-    if (response.status != 200) return alert(data.message);
+    if (response.status != 200) return openModal(data.message)
     window.localStorage.clear();
     window.localStorage.setItem("token", data.token);
     window.localStorage.setItem("email", data.user.email);
