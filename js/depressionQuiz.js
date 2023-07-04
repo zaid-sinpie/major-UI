@@ -1,8 +1,7 @@
 const depressionFormElement = document.querySelector(".depression-form");
 
 if (!("anxietyScore" in localStorage)) {
-  alert("Please answer anxiety quiz first");
-  window.location.assign("/pages/anxietyQuiz.html");
+  openModal('Please answer anxiety quiz first', () => window.location.assign('/pages/anxietyQuiz.html'))
 }
 
 depressionFormElement.addEventListener("submit", async (e) => {

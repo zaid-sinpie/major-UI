@@ -10,8 +10,7 @@ const getTeacherDetails = async () => {
   if (!type || !userId || !email || !token)
     return window.location.assign("../pages/login.html");
   if (type != TEACHER) {
-    alert("Only teachers can view this page");
-    return window.location.assign("../index.html");
+    return openModal('Only teachers can view this page', () => window.location.assign('../index.html'))
   }
   console.log(userId, token, email, type);
   try {
@@ -30,7 +29,7 @@ const getTeacherDetails = async () => {
       }
     );
     const data = await response.json();
-    if (response.status != 200) return alert(data.message);
+    if (response.status != 200) return openModal(data.message);
     console.log(data);
     for (let i = 0; i < data.teacher.students.length; i++) {
       const studentNode = document.createElement("p");

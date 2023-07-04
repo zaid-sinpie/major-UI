@@ -24,7 +24,7 @@ const getChildrenDetails = async () => {
 const provideDoctorList = async () => {
   const child = await getChildrenDetails();
   if (child.isHealthy) {
-    alert("Your child is healthy!");
+    openModal("You're child doesn't have any mental health issue")
   } else {
     window.location.assign("/pages/doctorList.html");
   }

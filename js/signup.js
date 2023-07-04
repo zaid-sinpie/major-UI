@@ -86,7 +86,7 @@ const studentSubmission = async () => {
   const teacherKey = loginForm.elements["teacherKey"].value;
 
   if (!name || !password || !email || !parentKey || !teacherKey)
-    alert("Fill all details");
+    openModal('Fill all details')
   try {
     const respone = await fetch("http://localhost:8000/auth/signup", {
       method: "POST",
@@ -122,7 +122,7 @@ const doctorSubmission = async () => {
   const tags = loginForm.elements["tags"].value.split(",");
   const gender = loginForm.elements["gender"].value;
 
-  if (!name || !password || !email) alert("Fill all details");
+  if (!name || !password || !email) openModal('Fill all details')
   try {
     const response = await fetch("http://localhost:8000/auth/signup", {
       method: "POST",
@@ -156,7 +156,7 @@ const teacherSubmission = async () => {
   const password = loginForm.elements["password"].value;
   const email = loginForm.elements["email"].value;
 
-  if (!name || !password || !email) alert("Fill all details");
+  if (!name || !password || !email) openModal('Fill all details')
   try {
     const response = await fetch("http://localhost:8000/auth/signup", {
       method: "POST",
@@ -188,7 +188,7 @@ const parentSubmission = async () => {
   const password = loginForm.elements["password"].value;
   const email = loginForm.elements["email"].value;
 
-  if (!name || !password || !email) alert("Fill all details");
+  if (!name || !password || !email) openModal('Fill all details');
   try {
     const response = await fetch("http://localhost:8000/auth/signup", {
       method: "POST",
@@ -204,7 +204,7 @@ const parentSubmission = async () => {
     });
 
     const data = await response.json();
-    if (response.status != 200) return alert("Wrong details");
+    if (response.status != 200) return openModal('Fill all details')
     window.localStorage.setItem("token", data.user.token);
     window.localStorage.setItem("email", data.user.email);
     window.localStorage.setItem("userId", data.user._id);
