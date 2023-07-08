@@ -3,7 +3,7 @@ const listBtn = document.querySelector(".btn");
 const getChildrenDetails = async () => {
   // const id = localStorage.getItem('userId')
   const response = await fetch(
-    "http://localhost:8000/api/parent/detail?token=" +
+    "http://localhost:8000/api/teacher/detail?token=" +
       localStorage.getItem("token"),
     {
       method: "POST",
@@ -19,22 +19,22 @@ const getChildrenDetails = async () => {
   );
   const data = await response.json();
   console.log(data);
-  const parent = data.parent;
+  const teacher = data.teacher;
   const agePara = document.querySelector('.age')
   agePara.textContent = 'Age: 24'
   const namePara = document.querySelector('.name')
-  namePara.textContent = 'Name: ' + parent.name;
-  const parentKeyPara = document.querySelector('.parent-key')
-  parentKeyPara.textContent = 'Parent Key: ' + parent.parentKey
-  // return data.parent.children[0];
+  namePara.textContent = 'Name: ' + teacher.name;
+  const parentKeyPara = document.querySelector('.teacher-key')
+  parentKeyPara.textContent = 'Parent Key: ' + teacher.teacherKey
+  return data.parent.children[0];
 };
-// const provideDoctorList = async () => {
-//   const child = await getChildrenDetails();
-//   if (child.isHealthy) {
-//     openModal("You're child doesn't have any mental health issue")
-//   } else {
-//     window.location.assign("/pages/doctorList.html");
-//   }
-// };
+const provideDoctorList = async () => {
+  const child = await getChildrenDetails();
+  if (child.isHealthy) {
+    openModal("You're child doesn't have any mental health issue")
+  } else {
+    window.location.assign("/pages/doctorList.html");
+  }
+};
 getChildrenDetails()
-// listBtn.addEventListener("click", provideDoctorList);
+listBtn.addEventListener("click", provideDoctorList);
